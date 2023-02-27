@@ -1,2 +1,3 @@
-# random-chart
-playing with chart.js
+# Random Chart
+
+This code defines a canvas element for the chart and a button that generates a random chart when clicked. When the user clicks the "Generate Chart" button, the `generateChart()` function generates a random number of data points between 3 and 10, and an array of random data values between 1 and 100. It also generates an array of labels for the data points. It then creates a new chart using the Chart.js library, and sets the chart's data to the generated data and labels. The chart is displayed as a bar chart, with a blue background color and black border. You can modify the code to generate different types of charts or use different colors and options.
