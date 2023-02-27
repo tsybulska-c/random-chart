@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Random Chart Generator</title>
+	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+	<h1>Random Chart Generator</h1>
+
+	<canvas id="chart"></canvas>
+
+	<div>
+		<button onclick="generateChart()">Generate Chart</button>
+	</div>
+
+	<script>
+		// Define a function for generating a random chart
+		function generateChart() {
+			// Generate a random number of data points between 3 and 10
+			var numDataPoints = Math.floor(Math.random() * 8) + 3;
+
+			// Generate an array of random data values between 1 and 100
+			var dataValues = [];
+			for (var i = 0; i < numDataPoints; i++) {
+				dataValues.push(Math.floor(Math.random() * 100) + 1);
+			}
+
+			// Generate an array of labels for the data points
+			var labels = [];
+			for (var i = 0; i < numDataPoints; i++) {
+				labels.push("Label " + (i + 1));
+			}
+
+			// Create a chart using Chart.js
+			var chart = new Chart(document.getElementById("chart"), {
+				type: "bar",
+				data: {
+					labels: labels,
+					datasets: [{
+						label: "Random Data",
+						data: dataValues,
+						backgroundColor: "rgba(54, 162, 235, 0.5)",
+						borderColor: "rgba(54, 162, 235, 1)",
+						borderWidth: 1
+					}]
+				},
+				options: {
+					scales: {
+						yAxes: [{
+							ticks: {
+								beginAtZero: true
+							}
+						}]
+					}
+				}
+			});
+		}
+	</script>
+</body>
+</html>
